@@ -1,0 +1,8 @@
+# Node modules
+/node_modules
+/angular-server/node_modules
+/angular-web/node_modules
+
+# Webstorm
+/angular-server/.idea/workspace.xml
+/angular-web/.idea/workspace.xml

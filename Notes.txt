@@ -1,0 +1,12 @@
+Website:
+http://localhost:5002/
+
+Offical docs:
+https://angular.io/start
+
+Example folder structure:
+https://javascript.plainenglish.io/how-to-structure-angular-apps-in-2021-a0bdd481ad0d
+https://github.com/touhidrahman/structure-ng-app-2021
+
+Code examples:
+https://github.com/angular/angular/tree/master/aio/content/examples
