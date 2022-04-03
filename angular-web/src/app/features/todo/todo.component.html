@@ -1,0 +1,20 @@
+<form [formGroup]="todoForm" #formDir="ngForm" class="pt-4">
+  <div class="flex">
+    <input type="text" id="description" class="border px-2 mr-2" formControlName="description" required>
+    <button class="app-btn" type="submit" (click)="todoService.addTodo(todoForm.value)">Add Todo</button>
+  </div>
+  <div *ngIf="description.invalid && (description.dirty || description.touched)" class="text-red-500">
+    <div *ngIf="description.errors?.['required']">description is required.</div>
+    <div *ngIf="description.errors?.['minlength']">description must be at least 2 characters long.</div>
+  </div>
+</form>
+
+<ul class="grid grid-cols-1 text-2xl bg-gray-200 mt-4">
+  <li *ngFor="let todo of todoService.todos" class="flex justify-between w-full py-2 border-4 border-gray-100">
+    <span class="px-8">{{todo.description}}</span>
+    <svg class="h-8 w-8 text-red-900 pr-2 cursor-pointer hover:text-red-600" (click)="todoService.deleteTodo(todo)">
+      <use href="/assets/x-circle-solid.svg#x-circle-solid" />
+    </svg>
+  </li>
+  <li *ngIf="todoService.todos.length === 0" class="p-2">No todos found in database.</li>
+</ul>
